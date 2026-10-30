@@ -3,7 +3,7 @@ import UIKit
 import AVFoundation
 import CallKit
 
-public class SwiftDtmfPlugin: NSObject, FlutterPlugin {
+public class DtmfPlugin: NSObject, FlutterPlugin {
 
     var _engine: AVAudioEngine
     var _player:AVAudioPlayerNode
@@ -25,7 +25,7 @@ public class SwiftDtmfPlugin: NSObject, FlutterPlugin {
         print("AVAudioSession setCategory failed - \(error)")
     }
     let channel = FlutterMethodChannel(name: "flutter_dtmf", binaryMessenger: registrar.messenger())
-    let instance = SwiftDtmfPlugin()
+    let instance = DtmfPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
     
